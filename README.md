@@ -10,8 +10,7 @@ This program now makes sure that the colors displayed all have a contrast ratio 
 
 ### v1.0 Updates
 
-*Coming soon*
-
+Now added a class for ease of modification and also a quicker user interface. 
 
 ## Developer
 
@@ -30,13 +29,16 @@ Here is an example of the program running:
 
 ```
 How many colors would you like in yor palette? (+2)
-4
-Would you like your palette in RGB or hexadecimal?
-Enter hex, Hex, or HEX for a hexadecimal number.
- Enter rgb or RGB.
-hex
+6
 What is the name of the file you would like your palette saved to?
-hexTest1
+exampleFile
+Would you like your palette in RGB or hexadecimal?
+
+Enter hex, Hex, or HEX for a hexadecimal number.
+Enter rgb or RGB.
+Hex
+Completed generation of exampleFile color palette in Hex format.
+
 ```
 
 ## C++ Guide
@@ -115,7 +117,7 @@ for(int i=0; i<colorPalette.size(); i++){ //iterates as long as it is smaller th
 Here is an example of my code which first iterates through the array and converts the vector elements to strings. It then iterates through those strings and pulls out three sets of 8bits of information. These are what will be used to output true color codes. 
 
 ### File Input and Output
-In my program there is no reading in from files, but the program does write to one. It opens and closes the writing file within main. The only output to file happens when either function outputRGB or outputHex is called. 
+In this program there is no reading in from files, but the program does write to one. It opens and closes the writing file within main. The only output to file happens when either function outputRGB or outputHex is called. 
 This is an example from outputRGB:
 
 for (int r=0; r<8; r++){ //seperates out first 8 bits
@@ -144,4 +146,4 @@ void outputHexadecimal(vector <int> , ofstream&); //Outputs the color code in He
 
 ### Classes
 
-*Coming in version 1.0*
+This program now utilizes a Palette class, which contains new functions such as outputToColorPalette(vector <int> &); which sends the palette to a private vector which is used by other meber functions. 
