@@ -46,8 +46,8 @@ Completed generation of exampleFile color palette in Hex format.
 ### Variables and Data Types
 ofstream writingFile; //A variable that tells the system that the program will be writing to a file, as well as naming it 'writingFile'.
 vector <int> colorPalette; //This is the vector of decimal values that represent color values, they are only outputted to this array if they meet certian contrast levels. 
-string choice; // Stores the users choice of either hex or rgb
-long & bianaryNum // This is passed throught to the findLuminosity function. 
+string choice; // Stores the users choice of either hex or rgb, I used a string to store the choice rather than a char and having the user return a letter, for increased user variability.
+long & bianaryNum // This is passed throught to the findLuminosity function. I used the long data type because bianaryNum holds a large integer, and is better used in a long data type. 
 
 ### Console Input and Output
 
@@ -56,7 +56,7 @@ long & bianaryNum // This is passed throught to the findLuminosity function.
   cin >> colorNum;
   } while(colorNum<2);
   
- For example, this code above asks the user for the amount of color paletts they would like, and only accepts that number if it is equal or greater that two. 
+ For example, this code above asks the user for the amount of color paletts they would like, and only accepts that number if it is equal or greater that two. The program will not work properly if the colorNum is less than 2.  
 
 ### Decisions
 
@@ -74,7 +74,7 @@ do{
     
   } while(choice!="RGB" && choice!="rgb" &&  choice!="Hex" && choice!="HEX" && choice!="hex"); //This while statement says that if the choice is not any of the ones the program is looking for then it will rerun the code. 
   
-  The code above will not allow the user to enter in anything except for one of the five codes that will pass the while statement. 
+  The code above will not allow the user to enter in anything except for one of the five codes that will pass the while statement. This is because the program wont output the codes if anything other than rgb, RGB, hex, HEX, or Hex. 
 
 ### Iteration
 
@@ -130,7 +130,7 @@ for (int r=0; r<8; r++){ //seperates out first 8 bits
 In my function there is only one vector I use and that is to store the color codes in decimal format. There is only one array I use and that is to store the hexadecimal value i produce from my hexadecimal output function. 
 Here is an example of iterating through a vector:
 
-for (int a=0; a<colorPalette.size(); a++){...}
+for (int a=0; a<colorPalette.size(); a++){...} this fully iterates through the colorPalette vector. 
 
 ### Functions
 
